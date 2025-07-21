@@ -1,0 +1,12 @@
+
+{
+  "name": "beanstalk-canary-app",
+  "version": "1.0.0",
+  "description": "Elastic Beanstalk canary deployment sample app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "ChatGPT",
+  "license": "ISC"
+}
