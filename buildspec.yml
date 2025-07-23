@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      php: 8.4
+      php: 8.2
   build:
     commands:
       - echo "Creating app folder and copying files..."
