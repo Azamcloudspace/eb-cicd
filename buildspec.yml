@@ -6,9 +6,6 @@ phases:
       nodejs: 20
   build:
     commands:
-      - echo "Current Directory: $(pwd)"
-      - echo "Files present:"
-      - ls -la
       - echo "Zipping files..."
       - zip -r app.zip index.js package.json Procfile
       - echo "Zip complete. Verifying contents:"
