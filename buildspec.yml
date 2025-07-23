@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "Zipping app files..."
       - mkdir -p bundle
-      - cp index.js package.json bundle/
+      - cp app.js package.json bundle/
       - cd bundle
       - zip -r ../app.zip .
       - cd ..
