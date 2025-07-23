@@ -8,7 +8,7 @@ phases:
     commands:
       - echo "Creating app folder and copying files..."
       - mkdir -p app
-      - cp index.js package.json Procfile app/
+      - cp index.html script.js styles.css app/
       - echo "Contents of app directory:"
       - ls -la app/
 
