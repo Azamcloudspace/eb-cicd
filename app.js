@@ -1,30 +1,17 @@
+// app.js
+const express = require('express');
+const app = express();
+const path = require('path');
 
-const http = require('http');
-const os = require('os');
+// Serve static files (optional)
+app.use(express.static(path.join(__dirname, 'public')));
 
-const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end(`
-      <html>
-        <head><title>Elastic Beanstalk App</title></head>
-        <body style="font-family: Arial, sans-serif; text-align: center; padding: 40px;">
-          <h1>🚀 Welcome to Your Elastic Beanstalk App!</h1>
-          <p>This is a canary-deployed Node.js app running on AWS.</p>
-          <p>You're served by: <strong>${os.hostname()}</strong></p>
-          <p>Visit <a href="/api">/api</a> to test a JSON API response.</p>
-        </body>
-      </html>
-    `);
-  } else if (req.url === '/api') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: '🎉 Canary deployment successful!', served_by: os.hostname() }));
-  } else {
-    res.writeHead(404);
-    res.end('Not Found');
-  }
+// Routes
+app.get('/', (req, res) => {
+  res.send(`
+    <h1 style="color: #2c3e50;">🚀 Welcome to My Elastic Beanstalk App!</h1>
+    <p>This is a Node.js + Express application deployed on AWS Elastic Beanstalk.</p>
+  `);
 });
 
-server.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+module.exports = app;
