@@ -2,7 +2,7 @@
   "name": "beanstalk-node-app",
   "version": "1.0.0",
   "description": "Simple Node.js app for Elastic Beanstalk",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
