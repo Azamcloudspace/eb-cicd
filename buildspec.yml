@@ -4,22 +4,15 @@ phases:
   install:
     runtime-versions:
       nodejs: 18
-    commands:
-      - echo "Installing Node.js dependencies..."
-      - npm install
-
   build:
     commands:
-      - echo "Zipping application..."
-      - mkdir bundle
-      - cp index.js bundle/
-      - cp package.json bundle/
+      - echo "Zipping app files..."
+      - mkdir -p bundle
+      - cp index.js package.json bundle/
       - cd bundle
       - zip -r ../app.zip .
-
-  post_build:
-    commands:
-      - echo "Uploading app.zip to S3..."
+      - cd ..
+      - echo "Uploading to S3..."
       - aws s3 cp app.zip s3://my-artifacts-azamcloud/app.zip
 artifacts:
   files:
