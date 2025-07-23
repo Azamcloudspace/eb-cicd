@@ -1,0 +1,1 @@
+console.log("Static app loaded successfully!");
