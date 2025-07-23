@@ -7,7 +7,7 @@ phases:
   build:
     commands:
       - echo "Zipping app files..."
-      - zip -r app.zip index.js package.json
+      - zip -r app.zip index.js package.json Procfile
       - echo "Uploading to S3..."
       - aws s3 cp app.zip s3://my-artifacts-azamcloud/app.zip
 artifacts:
