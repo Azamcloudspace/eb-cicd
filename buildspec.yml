@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 20
+      php: 8.4
   build:
     commands:
       - echo "Creating app folder and copying files..."
