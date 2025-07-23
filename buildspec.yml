@@ -6,13 +6,13 @@ phases:
       nodejs: 20
   build:
     commands:
-      - echo "Zipping files..."
-      - zip -r app.zip index.js package.json Procfile
-      - echo "Zip complete. Verifying contents:"
-      - unzip -l app.zip
-      - echo "Uploading to S3..."
-      - aws s3 cp app.zip s3://my-artifacts-azamcloud/app.zip
+      - echo "Creating app folder and copying files..."
+      - mkdir -p app
+      - cp index.js package.json Procfile app/
+      - echo "Contents of app directory:"
+      - ls -la app/
 
 artifacts:
+  base-directory: app
   files:
-    - app.zip
+    - '**/*'
