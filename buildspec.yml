@@ -18,4 +18,5 @@ artifacts:
   files:
     - appspec.yml
     - app/**/*
+    - scripts/restart.sh
     
