@@ -15,6 +15,6 @@ phases:
       - ls -la app/
 
 artifacts:
+  base-directory: app
   files:
-    - app/**/*
-    
+    - '**/*'
