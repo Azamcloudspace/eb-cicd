@@ -4,15 +4,18 @@ phases:
   install:
     runtime-versions:
       php: 8.2
+
   build:
     commands:
-      - echo "Creating app folder and copying files..."
       - mkdir -p app
-      - cp index.html script.js styles.css app/
-      - echo "Contents of app directory:"
+      - cp index.html app/
+      - cp styles.css app/
+      - cp script.js app/
+      - echo "App folder contents:"
       - ls -la app/
 
 artifacts:
-  base-directory: app
   files:
-    - '**/*'
+    - appspec.yml
+    - app/**/*
+    
