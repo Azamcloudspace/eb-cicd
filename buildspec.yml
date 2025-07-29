@@ -13,7 +13,7 @@ phases:
       - cp script.js app/
       - echo "App folder contents:"
       - ls -la app/
-      - aws s3 cp app/ s3://my-artifacts-azamcloud/ --recursive
+      - aws s3 cp app s3://my-artifacts-azamcloud/app --recursive
 
 artifacts:
   base-directory: app
